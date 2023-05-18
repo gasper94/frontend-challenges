@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | QR code component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    /* .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); } */
+
+    :root{
+      --White: hsl(0, 0%, 100%);
+      --Light-gray: hsl(212, 45%, 89%);
+      --Grayish-blue: hsl(220, 15%, 55%);
+      --Dark-blue: hsl(218, 44%, 22%);
+      --blue: #2b7dfa;
+    }
+
+    .body{
+      /* display: flex; */
+      background-color: var(--Light-gray);
+      height: 100vh;
+      margin: 0;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .card{
+      display: flex;
+      flex-direction: column;
+      background-color: var(--White);
+      border: 10px white;
+      height: 450px;
+      max-width: 300px;
+      border-radius: 10px red;
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.);
+    }
+
+
+    .qr-section{
+      height: 80%;
+      border: 10px;
+      
+      border-radius: 6px; 
+      overflow: hidden;
+    }
+
+    .qr-image{
+      height: 300px;
+      width: 300px;
+    }
+
+    .content-section{
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      height: 40%;
+      margin-top: 15px;
+    }
+
+
+    .title{
+      font-family: 'Outfit', sans-serif;
+      text-align: center;
+      color: black;
+      font-size: 20px;
+      margin-inline: 30px;
+      font-weight: 700;
+    }
+
+    .sub-title{
+      font-family: 'Outfit', sans-serif;
+      text-align: center;
+      font-size: 15px;
+      color: gray;
+      font-weight: 400;
+      margin-inline: 20px;
+    } 
+
+
+
+  </style>
+</head>
+<body class="body">
+  <div class="container">
+    <div class="card">
+      <div class="qr-section">
+          <img class="qr-image" src="../images/image-qr-code.png"/>
+      </div>
+      <div class="content-section">
+        <div class="title">Improve your front-end skills by building projects</div>
+        <div class="sub-title">Scan the QR code to visit FrontEnd Mentor and take your coding skills to the next level</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
