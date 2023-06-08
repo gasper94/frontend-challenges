@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 export type User = {
@@ -13,6 +13,10 @@ export const useCustomHook = (
   const [loading, setLoading] = useState<boolean>(false);
   const [currentUser, setCurrentUser] = useState<number>(0);
 
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
   const fetchUser = (): void => {
     try {
       setLoading(true);
@@ -22,7 +26,6 @@ export const useCustomHook = (
           const {
             data: { results },
           } = res;
-          setLoading(false);
           console.log("user:", results[0]);
           const {
             name: { first },
@@ -36,6 +39,8 @@ export const useCustomHook = (
           };
 
           setUsers([...users, newUser]);
+
+          setLoading(false);
         })
         .catch((Error) => {
           console.log("Error:", Error);
@@ -44,6 +49,10 @@ export const useCustomHook = (
       alert("error:" + error);
     }
   };
+
+  useEffect(() => {
+    setCurrentUser(users.length - 1);
+  }, [users]);
 
   const next = (): void => {
     if (currentUser < users.length - 1) {
@@ -54,7 +63,9 @@ export const useCustomHook = (
   };
 
   const previous = (): void => {
-    setCurrentUser(currentUser - 1);
+    if (currentUser > 0) {
+      setCurrentUser(currentUser - 1);
+    }
   };
 
   return [users, loading, currentUser, fetchUser, next, previous];

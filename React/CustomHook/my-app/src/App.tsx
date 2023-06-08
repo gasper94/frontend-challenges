@@ -20,7 +20,7 @@ function App() {
       {/* {userList.length}
     Hello there!</div> */}
       {/* <div>{userList}</div> */}
-      {/* {JSON.stringify(users)} */}
+      {JSON.stringify(users)}
       <h1>Current User: {currentUser}</h1>
       {/* <button onClick={fetchUser}>fetch users</button> */}
       <button onClick={next}>Next</button>
