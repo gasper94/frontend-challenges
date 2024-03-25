@@ -1,0 +1,44 @@
+body{
+    background-color: aliceblue;
+}
+
+.title{
+    color: white;
+}
+
+.dropdown{
+    display: 'flex';
+    gap: 10px;
+    /* background-color: red; */
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.header:hover {
+    cursor: pointer;
+}
+
+
+.accordion {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.accordion .accordion-toggle td {
+    background: #eee;
+    padding: 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.accordion .accordion-content td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    display: block;
+}
